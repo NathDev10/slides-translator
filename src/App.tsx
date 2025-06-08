@@ -5,20 +5,15 @@ import { HomePage } from './components/HomePage';
 import { AuthPage } from './components/AuthPage';
 import { HistoryPage } from './components/HistoryPage';
 import './index.css'
-
 type Page = 'home' | 'auth' | 'history';
-
 function App() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
-
   const handleNavigate = (page: Page) => {
     setCurrentPage(page);
   };
-
   const handleAuthSuccess = () => {
     setCurrentPage('home');
   };
-
   const renderPage = () => {
     switch (currentPage) {
       case 'home':
@@ -31,7 +26,6 @@ function App() {
         return <HomePage />;
     }
   };
-
   return (
     <AuthProvider>
       <div className="min-h-screen bg-gray-50">
@@ -41,5 +35,4 @@ function App() {
     </AuthProvider>
   );
 }
-
 export default App;
