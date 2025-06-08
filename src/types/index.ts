@@ -3,26 +3,21 @@ export interface User {
   email: string;
   name?: string;
 }
-
 export interface AuthState {
   user: User | null;
   isAuthenticated: boolean;
 }
-
 export type FileType = 'pptx' | 'pdf' | 'odp';
-
 export interface FileUpload {
   file: File;
   type: FileType;
 }
-
 export interface TranslationRequest {
   file: File;
   language: string;
   description: string;
   fileType: FileType;
 }
-
 export interface Translation {
   id: string;
   filename: string;
@@ -32,16 +27,10 @@ export interface Translation {
   date: string;
   downloadUrl?: string;
   status: 'pending' | 'completed' | 'error';
+  userId?: string;
 }
-
 export interface Language {
   code: string;
   name: string;
-  flag?: string;
-}
-
-export interface ApiResponse {
-  success: boolean;
-  message?: string;
-  data?: unknown;
+  flag: string;
 }
